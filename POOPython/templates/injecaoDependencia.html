@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<p> Injecao de dependencia ............. </p><br>
+<p>metodo da classe Casa sendo chamado na classe pessoa: </p>
+    casa = Casa()<br>
+    pessoa = Pessoa('wagner', casa)<br>
+    pessoa.entrar_no_local() (que executa um metodo da casa = return self.__local.acender_luzes()
+<hr>
+
+{{ pessoa.entrar_no_local() }}
+
+{% endblock %}

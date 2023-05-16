@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Classes e contexto</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form_criarcontrole.csrf_token }}
+                    <legend>Criar Controle</legend>
+                    <hr>
+                        <fieldset>
+                            <div class="form-group">
+                                 {{ form_criarcontrole.televisao.label(class="form-control-label") }}
+                                 {{ form_criarcontrole.televisao(class="form-control") }}
+                            </div>
+
+                            <div class="form-group">
+                                 {{ form_criarcontrole.comodo.label(class="form-control-label") }}
+                                 {{ form_criarcontrole.comodo(class="form-control") }}
+                            </div>
+                        </fieldset>
+                    {{ form_criarcontrole.botao(class="btn btn-primary mt-2") }}
+                </form>
+            </div>
+
+
+
+
+
+
+            <div class="col">
+                <legend>Mudar Canal</legend>
+                <hr>
+                <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form_criarcontrole.csrf_token }}
+                    <fieldset>
+                        <div class="form-group">
+                            Selecione a TV <select name="televisao">
+                            {% for tv in controle_tv %}
+
+                                    <OPTION> {{ tv }} </option>
+
+                            {% endfor %}
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            {{ form_criarcontrole.mudar.label }}
+                            {{ form_criarcontrole.mudar(class="form-control") }}
+                            {{ form_criarcontrole.btnMudar(class="btn btn-primary") }}
+                        </div>
+
+
+
+                    </fieldset>
+                </form>
+                <div class="row p-4 mt-2">
+
+                    {% for key in class_map %}
+                        {{ key }} está no canal {{ class_map[key] }}
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

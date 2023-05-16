@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<p>Principio aberto fechado, apenas o principio, interface comes here! </p>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>Classe Circo com método apresentar,
+                recebendo apresentador</p>
+
+            <p>Classe Malabarista e Palhaco com método apresentar tbm</p>
+
+
+        </div>
+        <div class="col">
+            <p> Resultados das chamadas </p>
+            <p>circo.apresentar(malabarista)</p>
+            <p>circo.apresentar(palhaco)</p><hr>
+
+            {{ p }}
+            <br>
+            {{ m }}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

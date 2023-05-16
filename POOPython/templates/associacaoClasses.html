@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1> associação de classes..........</h1>
+<div class="container">
+    <div class="row">
+    <div class="col">
+        <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form.csrf_token }}
+            <fieldset>
+                {{ form.interruptor1.label(class="form-control-label") }}
+                {{ form.interruptor1(class="form-control") }}
+
+                {{ form.interruptor2.label(class="form-control-label") }}
+                {{ form.interruptor2(class="form-control") }}
+
+                {{ form.botao(class="btn btn-primary mt-2") }}
+                <hr>
+                <p> cria-se os 2 objetosa da classe Interruptore </p>
+            </fieldset>
+        </form>
+    </div>
+
+     <div class="col">
+         <p> Cria-se obj da classe pessoa que esta associada a interruptor </p>
+
+         <p>ob1 - pessoa.acender(interruptor1) : </p>
+         {{ acenderLuz }}<br>
+         <p> ob2 -  pessoa.apagar(interruptor2) :</p>
+         {{ apagarLuz }}<br>
+          <p> pessoa.metodoProprio() : </p>
+         {{ proprio }}
+     </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1> Responsabilidade Única</h1>
+    <hr>
+    <div class="container">
+        <form method="POST" action="" class="border p-4 mt-2">
+            {{ form_resUnica.csrf_token }}
+            <fieldset>
+                <div class="form-group">
+
+                    {{ form_resUnica.nome.label(class="form-control-label") }}
+                    {{ form_resUnica.nome(class="form-control") }}
+
+                    {{ form_resUnica.idade.label(class="form-control-label") }}
+                    {{ form_resUnica.idade(class="form-control") }}
+                </div>
+
+            </fieldset>
+             {{ form_resUnica.botao(class="btn btn-primary mt-2") }}
+        </form>
+        <div class="form-group">
+            {% if sistema != None %}
+            <p> operacao realizada, verifique o print... </p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

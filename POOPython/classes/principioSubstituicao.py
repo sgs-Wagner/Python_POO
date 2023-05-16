@@ -1,0 +1,1 @@
+# fala só de hetanca, classe mais generica no topo, especificcando pras filhas

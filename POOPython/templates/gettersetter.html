@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1> Getters, Setters e Estados</h1>
+        <hr>
+        <h2> *** Consultas aos estados ***</h2>
+        <form method="POST" action ="" class="p-4 mt-2">
+            {{ frm_estado.csrf_token }}
+            <div class="form-group">
+                    {{ frm_estado.nome.label }}
+                    {{ frm_estado.nome }}
+
+                    {{ frm_estado.estado.label }}
+                    {{ frm_estado.estado }}
+
+                    {{ frm_estado.botao(class="btn btn-primary") }}
+            </div>
+            <div class="container">
+                    {{ estado.get_estado() }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
+

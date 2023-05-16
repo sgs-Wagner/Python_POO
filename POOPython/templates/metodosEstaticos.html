@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1> metodos estaticos....</h1>
+<hr>
+<div class="container">
+    <p> classe com 2 metodos estaticos </p>
+    <div class="row">
+        <div class="col">
+            <p>metodo estatico error_500</p>
+            {{ ex1 }}
+        </div>
+        <div class="col">
+            <p>metodo estatico error_404</p>
+            {{ ex2 }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="d-flex justify-content-center"><h1>Associação Bilateral</h1></div>
+<hr>
+
+<div class="row">
+    <div class="col ">
+        Classe
+        <hr>
+        <div class="col">
+            <p> class Pessoa:</p>
+
+            <p>def __init__(self, nome):<br>
+                self.__local = None<br>
+                self.__nome = nome<br>
+            </p>
+            <p>
+            def entrar_no_local(self):<br>
+                self.__local.acender_luzes()<br>
+            </p>
+            <p>
+            def apresentar_local(self):<br>
+                endereco = self.__local.get_endereco()<br>
+                print(endereco)<br>
+            </p>
+            <p>
+            def se_apresentar(self):<br>
+                print('olá, sou  {}'.format(self.__nome))<br>
+            </p>
+            <p>
+            def set_local(self, local: any):<br>
+                self.__local = local<br>
+            </p>
+            <p>
+            def get_local(self):<br>
+                return self.__local<br>
+            </p>
+        </div>
+
+    </div>
+    <div class="col ">
+        <div class="col">
+            <p>   classe </p>
+            <hr>
+            <p>class Casa:</p>
+            <p>
+            def __init__(self):<br>
+                self.__endereco = 'rua dos bobos'<br>
+                self.__proprietario = None<br>
+            </p>
+            <p>
+                def acender_luzes(self):<br>
+                    print('estou acendendo as luzes')<br>
+            </p>
+            <p>
+                def get_endereco(self):<br>
+                    return self.__endereco<br>
+            </p>
+            <p>
+                def set_proprietario(self, proprietario: any):<br>
+                    self.__proprietario = proprietario<br>
+            </p>
+            <p>
+                def get_proprietario(self):<br>
+                    return self.__proprietario<br>
+            </p>
+            </div>
+    </div>
+</div>
+<hr>
+<div class="row ">
+
+    <div class="d-flex justify-content-center"><h2>Objetos e outputs</h2></div>
+    <div class="col">
+    casa = Casa()<br>
+    wagner = Pessoa('wagner')<br>
+
+    wagner.set_local(casa)<br>
+    casa.set_proprietario(wagner)<br>
+
+    proprietario = casa.get_proprietario()<br>
+
+    proprietario.se_apresentar()<br>
+
+    wagner.apresentar_local()<br>
+    </div>
+    <div class="col">
+        <p>
+        olá, sou  wagner<br>
+        rua dos bobos
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

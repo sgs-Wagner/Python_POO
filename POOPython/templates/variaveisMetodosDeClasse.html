@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+    <form method="POST" action="" class="border p-4 mt-2">
+        {{ form_variaveismetodosclasse.csrf_token }}
+        <fieldset>
+        <div class="form-group">
+
+            {{ form_variaveismetodosclasse.loja1.label(class="form-control-label") }}
+            {{ form_variaveismetodosclasse.loja1(class="form-control") }}
+
+            {{ form_variaveismetodosclasse.loja2.label(class="form-control-label") }}
+            {{ form_variaveismetodosclasse.loja2(class="form-control") }}
+
+            {{ form_variaveismetodosclasse.novaTarifa.label(class="form-control-label") }}
+            {{ form_variaveismetodosclasse.novaTarifa(class="form-control") }}
+
+            {{ form_variaveismetodosclasse.botao(class="btn btn-primary mt-2") }}
+
+        </div>
+        </fieldset>
+    </form>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p> Valores Iniciais </p>
+            {% if loja1 != None: %}
+                <hr>
+                {{ loja1.get_endereco() }}
+                {{ loja1Inicial }}
+                <hr>
+                {{ loja2.get_endereco() }}
+                {{ loja2Inicial }}
+            {% endif %}
+        </div>
+
+        <div class="col">
+            <p> Valores Finais </p>
+            {% if loja1 != None: %}
+                <hr>
+                <p> apenas no obj da loja 1 foi executado o metodo alterartarifa: </p><br>
+
+                {{ loja1.get_endereco() }}
+                {{ loja1.vender() }}
+                <hr>
+                <p> mas ... por se tratar de variavel de classe a loja 2 tbm foi atingida </p><br>
+                {{ loja2.get_endereco() }}
+                {{ loja2.vender() }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
